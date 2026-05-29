@@ -1,12 +1,10 @@
 # Pneumonia Classification System
 
-This project is a deep learning-based web application that classifies lung CT scan images as **Normal** or **Pneumonia**.
-
-The model was trained using a pretrained ResNet-18 architecture in PyTorch and integrated into a Streamlit web application for single-image prediction.
+This project is a deep learning-based web application that classifies chest CT scan images as **Normal** or **Pneumonia**. The model was trained using a pretrained ResNet-18 architecture in PyTorch and integrated into a Streamlit web application for single-image prediction.
 
 ## Features
 
-- Upload a lung CT scan image
+- Upload a chest CT scan image
 - Predict whether the image is Normal or Pneumonia
 - Display prediction confidence score
 - Simple Streamlit-based user interface
@@ -53,9 +51,8 @@ python3 -m streamlit run app.py
 
 ## Dataset
 
-The dataset used for this project was obtained from Kaggle and contains lung CT scan images categorized into Normal and Pneumonia classes.
+The dataset used for this project was obtained from Kaggle and contains chest CT scan images categorized into Normal and Pneumonia classes.
 
-The dataset is not included in this repository due to file size and licensing limitations.
 
 ## Disclaimer
 
