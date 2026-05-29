@@ -12,13 +12,10 @@ st.set_page_config(
     layout="centered"
 )
 
-# Class names should match your training order
 class_names = ["Normal", "Pneumonia"]
 
-# Use CPU for local prediction
 device = torch.device("cpu")
 
-# Same preprocessing used in Colab
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor()
