@@ -1,0 +1,10 @@
+*.zip
+__MACOSX/
+.DS_Store
+__pycache__/
+*.pyc
+Penumonia_Project/
+Pneumonia_Project/
+Pneumonia Balanced CT/
+Normal/
+Pneumonia/
