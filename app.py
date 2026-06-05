@@ -4,6 +4,7 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 import torch.nn.functional as F
+import base64
 
 # Page setup
 st.set_page_config(
@@ -11,11 +12,38 @@ st.set_page_config(
     page_icon="🫁",
     layout="centered"
 )
+def set_background(image_file):
+    with open(image_file, "rb") as file:
+        encoded_image = base64.b64encode(file.read()).decode()
 
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
+                              url("data:image/jpg;base64,{encoded_image}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .block-container {{
+        padding-top: 2rem;
+    }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+set_background("background.jpg")
+
+# Class names should match your training order
 class_names = ["Normal", "Pneumonia"]
 
+# Use CPU for local prediction
 device = torch.device("cpu")
 
+# Same preprocessing used in Colab
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor()
